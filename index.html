@@ -25,17 +25,25 @@
 </head>
 
 <body class="font-Montserrat bg-black">
-
-
     <nav class="nav-main ">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <span class=" md:hidden lg:block text-lg md:text-3xl font-extrabold whitespace-nowrap text-blue-500"
-                    style="background-image: linear-gradient(to right, rgb(114, 54, 4), rgb(241, 227, 241));
-                color: transparent;
-                -webkit-background-clip: text; /* For Safari and older versions of Chrome */
-                background-clip: text;">$MOODENG</span>
+                <span class="md:hidden lg:block text-lg md:text-4xl font-extrabold whitespace-nowrap text-blue-500"
+                    style="
+                        background-image: linear-gradient(to right, rgb(114, 54, 4), rgb(241, 227, 241));
+                        color: transparent;
+                        -webkit-background-clip: text; 
+                        background-clip: text;
+                        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5);
+                        transition: text-shadow 0.3s ease;
+                    "
+                    onmouseover="this.style.textShadow='2px 2px 0 rgba(255, 255, 255, 0.7), -2px -2px 0 rgba(255, 255, 255, 0.7)';"
+                    onmouseout="this.style.textShadow='1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5)';">
+                    $MOODENG
+                </span>
             </a>
+            
+            
             <button data-collapse-toggle="navbar-default" type="button" style="color: rgb(18, 252, 154);"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-sm md:hidden hover:bg-cyan-500  "
                 aria-controls="navbar-default" aria-expanded="false" onclick="toggleMenu()">
@@ -52,7 +60,7 @@
                 <ul
                     class="font-medium flex flex-col  p-4 md:p-0 mt-4 border rounded-sm md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
                     <li>
-                        <a href="#"
+                        <a href="#home"
                             class="violet block py-2 px-3 text-white text-lg lg:text-xl rounded hover:text-pink-500 md:hover:bg-transparent md:border-0 md:hover:text-pink-500 md:p-0"
                             aria-current="page"><i class="bx bx-coin"></i> HOME</a>
                     </li>
@@ -100,35 +108,17 @@
                 </h1>
                 <div class="flex justify-center items-center gap-x-3 mx-auto w-full">
                     <p class="text-white">Token Address: </p>
-                    <div id="hs-clipboard-basic" class=" text-white border border-blue-500 rounded-lg w-1/2 md:w-1/2">
-                        <input id="hs-clipboard-input" type="text"
-                            class="py-3 px-4 block rounded-lg text-sm w-full md:w-full placeholder:text-white focus:border-blue-500 focus:ring-blue-500 bg-gray-900 border-gray-700"
-                            value="0x000">
-                    </div>
-                    <button type="button"
-                        class="js-clipboard p-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-blue-500 bg-gray-500 text-white shadow-sm hover:bg-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                        data-clipboard-target="#hs-clipboard-basic" data-clipboard-action="copy"
-                        data-clipboard-success-text="Copied" onclick="changeCopyText(this)">
-                        <svg class="js-clipboard-default w-4 h-4 group-hover:rotate-6 transition"
-                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
-                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-                        </svg>
+                    
 
-                        <svg class="js-clipboard-success hidden w-4 h-4 text-blue-600"
-                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        <span class="copy-text">copy</span>
-                    </button>
+<div id="hs-clipboard-basic" class="p-2 border border-blue-500 bg-gray-500 text-white rounded-lg">
+    0x00
+</div>
+
     </section>
 
     <!-- about section -->
     <section id="about" class="shadow-2xl py-16">
         <div class="flex flex-col items-center justify-center mx-5 lg:mx-20 gap-5">
-            <p class="text-6xl lg:text-7xl font-extrabold text-center text-white">No Taxes</p>
             <div class="hero lg:h-screen flex flex-col-reverse justify-between lg:flex-row items-center mx-5 lg:mx-10">
                 <div class="main-logo about-logo w-fill lg:w-1/3 rounded-full mt-8">
                     <img src="moodeng.png" alt="Animated" />
@@ -150,9 +140,10 @@
 <!-- Tokenomics Section -->
 <section id="tokenomics" class="text-white py-16">
     <div class="container mx-auto text-center">
-        <div class="token1 flex flex-col-reverse md:flex-row md:items-center justify-start mx-4 md:mx-6 lg:mx-8">
-            <h1 class="token text-5xl lg:text-7xl font-extrabold mb-8 text-white">Tokenomics</h1>
+        <div class="token1 flex flex-col-reverse md:flex-row md:items-center justify-center mx-4 md:mx-6 lg:mx-8">
+            <h1 class="token text-5xl lg:text-7xl font-extrabold mb-8 text-white text-center">Tokenomics</h1>
         </div>
+        
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 m-10 align-middle">
             <!-- Total Supply -->
             <div class="token1 p-6 border-4 border-white rounded-lg shadow-2xl">
@@ -163,9 +154,15 @@
             <div class="token2 p-6 border-4 border-white rounded-lg shadow-md flex items-center justify-center h-full">
                 <h1 class="text-3xl font-bold text-white">Liquidity Locked</h1>
             </div>
+
+            <!-- No Taxes Section -->
+            <div class="token2 p-6 border-4 border-white rounded-lg shadow-md flex items-center justify-center h-full">
+                <h1 class="text-3xl font-bold text-white">No Taxes</h1>
+            </div>
         </div>
     </div>
 </section>
+
 
 
 
@@ -177,13 +174,17 @@
         </div>
 
         <div class="social w-full md:w-1/2 mx-4">
-            <h1 class="text-center md:text-left text-3xl lg:text-5xl font-extrabold mb-8 text-white">Follow $MOODENG on their socials...</h1>
+            <h1 class="text-center md:text-left text-3xl lg:text-5xl font-extrabold mb-8"
+    style="background-image: linear-gradient(to right, white, black); color: transparent; -webkit-background-clip: text; background-clip: text;">
+    Follow $MOODENG on their socials...
+</h1>
+
             <div class="flex items-center justify-center md:justify-start gap-4">
                 <a href="https://google.com">
                     <img class="w-24 transform hover:scale-110 transition duration-200" src="x.png" alt="Social Icon">
                 </a>
                 <a href="https://google.com">
-                    <img class="w-24 transform hover:scale-110 transition duration-200" src="dextools.jpg" alt="Social Icon">
+                    <img class="w-24 transform hover:scale-110 transition duration-200" src="dxdx.png" alt="Social Icon">
                 </a>
                 <a href="https://google.com">
                     <img class="w-24 transform hover:scale-110 transition duration-200" src="dexscreener.png" alt="Social Icon">
