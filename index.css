@@ -6,7 +6,7 @@ html,
 body {
     overflow-x: hidden;
     font-family: 'Archivo Black';
-    background-image: url('mm.png');
+    background-image: url('oldmod.png');
     background-size: contain;
 }
 
@@ -18,20 +18,20 @@ body {
 }
 
 #about {
-    background-image: url('m.png');
+    background-image: url('about.png');
     background-size: cover;
     background-position: center;
     height: 100vh; /* Optional: full height */
 }
 
 #tokenomics {
-    background-image: url('d.png');
+    background-image: url('https://media1.tenor.com/m/MwF4qwSCvYkAAAAC/pygmy-hippo-hippo.gif');
     background-size: cover;
     background-position: center;
     height: 100vh; /* Optional: full height */
 }
 #social {
-    background-image: url('e.png');
+    background-image: url('mstch.png');
     background-size: cover;
     background-position: center;
 }
