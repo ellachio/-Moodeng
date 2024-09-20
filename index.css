@@ -6,10 +6,39 @@ html,
 body {
     overflow-x: hidden;
     font-family: 'Archivo Black';
-    background-image: url('mdeng.png'); /* For a background image */
-    background-size: cover; /* To cover the entire background */
-    background-position: center; /* Center the image */
+    background-image: url('mm.png');
+    background-size: contain;
 }
+
+#home {
+    background-image: url('m.png');
+    background-size: contain;
+    background-position: center;
+    height: 100vh; /* Optional: full height */
+}
+
+#about {
+    background-image: url('m.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Optional: full height */
+}
+
+#tokenomics {
+    background-image: url('d.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Optional: full height */
+}
+#social {
+    background-image: url('e.png');
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
 
 @keyframes customBounce {
     30% {
