@@ -4,38 +4,132 @@
 
 html,
 body {
+    margin: 0;
+    font-family: 'Archivo Black', sans-serif;
     overflow-x: hidden;
-    font-family: 'Archivo Black';
-    background-image: url('oldmod.png');
-    background-size: contain;
+    background-color: #f5cba7;
 }
 
-#home {
-    background-image: url('m.png');
-    background-size: contain;
-    background-position: center;
-    height: 100vh; /* Optional: full height */
+.hero, #about, #social {
+    background-color: #f5cba7; /* Peach color */
 }
 
-#about {
-    background-image: url('about.png');
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Optional: full height */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh; /* Full height of the viewport */
+    background-color: #f5cba7; /* Peach background */
 }
 
-#tokenomics {
-    background-image: url('https://media1.tenor.com/m/MwF4qwSCvYkAAAAC/pygmy-hippo-hippo.gif');
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Optional: full height */
-}
-#social {
-    background-image: url('mstch.png');
-    background-size: cover;
-    background-position: center;
+.imglogo {
+    width: 50%; /* Control size here */
+    max-width: 600px; /* Ensure it doesn't get too large on bigger screens */
+    margin: 20px 0; /* Space between the elements */
 }
 
+.token-address {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content */
+    margin-top: 20px; /* Additional spacing from the previous content */
+}
+
+.token-address p {
+    font-size: 1.5rem; /* Larger font size for visibility */
+    margin-bottom: 10px; /* Space between the label and the address box */
+    color: #FFF; /* Ensures text is white */
+}
+
+#hs-clipboard-basic {
+    font-size: 1.2rem; /* Larger font size for the address */
+    padding: 15px 20px; /* Larger padding for better readability */
+    border: 2px solid #3498db; /* Thicker border with a lighter blue */
+    background-color: #666; /* Darker background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    display: inline-block; /* Ensures the box does not stretch fully */
+    width: auto; /* Adjust width to content */
+    max-width: 80%; /* Limits width to avoid overly long box */
+    text-align: center; /* Center the text inside the box */
+}
+
+#partners {
+    background-color: #000; /* Ensure background is black for high contrast */
+    color: #fff;
+    padding: 40px 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack vertically on mobile */
+    align-items: center; /* Center-align items */
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.token1 {
+    background-color: #333; /* Dark background for the box */
+    color: #fff; /* White text for contrast */
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px;
+    width: 80%; /* Slightly narrower boxes */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Needed for positioning arrows or lines */
+}
+
+.token1:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    bottom: -20px; /* Positioning the arrow */
+    font-size: 24px;
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row; /* Side by side on larger screens */
+        flex-wrap: wrap;
+    }
+    .token1 {
+        width: calc(50% - 40px); /* Adjust width for side-by-side layout */
+        margin: 20px;
+    }
+    .token1:not(:last-child)::after {
+        content: ''; /* No arrows on desktop if side-by-side */
+    }
+}
+
+/* Pumping animation for the logo */
+@keyframes pump {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.imglogo {
+    animation: pump 1s infinite ease-in-out; /* Apply the pump animation */
+}
+
+/* Initial style for the $MOODENG text to enable transition */
+.glow-text {
+    transition: transform 0.10s ease;
+    display: inline-block; /* Required to apply transform */
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* If using Tailwind CSS, you can use utility classes instead of custom CSS if preferred */
 
 
 
@@ -44,16 +138,20 @@ body {
     30% {
         transform: scale(1.2);
     }
+
     40%,
     60% {
         transform: rotate(-20deg) scale(1.2);
     }
+
     50% {
         transform: rotate(20deg) scale(1.2);
     }
+
     70% {
         transform: rotate(0deg) scale(1.2);
     }
+
     100% {
         transform: scale(1);
     }
@@ -62,28 +160,8 @@ body {
 .about-logos {
     animation: customBounce 1.5s infinite;
 }
-
 .w-full button:hover .svgg path {
-    fill: rgb(0, 0, 0);
+    fill: black;
 }
 
 
-#social {
-    padding: 2rem 0; 
-}
-
-#social .social {
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center; 
-}
-
-#social img {
-    max-width: 100%; 
-    height: auto; 
-}
-
-#social h1 {
-    margin-bottom: 1.5rem; 
-}
